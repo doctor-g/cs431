@@ -150,6 +150,6 @@ prompts as part of your report:
   application. Be clear and precise here, as this is, in part, an assessment of
   your correct use of technical terminology.
 
-Export your project by using `File&rightarrow;Project to Zip file` and submit it
+Export your project by using `File→Project to Zip file` and submit it
 via [Canvas](https://bsu.instructure.com).
 
