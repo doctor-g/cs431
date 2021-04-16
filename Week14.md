@@ -150,6 +150,8 @@ prompts as part of your report:
 - Describe how polymorphism allowed dependency inversion in this little
   application. Be clear and precise here, as this is, in part, an assessment of
   your correct use of technical terminology.
+  Consider, for example, where exactly is polymorphism used?
+  Where exactly is a dependency inverted?
 
 Export your project by using `File→Project to Zip file` and submit it
 via [Canvas](https://bsu.instructure.com).
