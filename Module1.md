@@ -30,6 +30,7 @@ dependencies... but what does this mean?
 
 When you studied object-oriented programming in CS222, you should have come
 across [the SOLID principles](https://en.wikipedia.org/wiki/SOLID):
+
 - Single-Responsible Principle
 - Open-Closed Principle
 - Liskov substitution principle
