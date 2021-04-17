@@ -15,18 +15,63 @@ presentation, complete the corresponding assignment on Canvas. This assignment
 will require you to read your notes, reflect on them, and share some of your
 findings.
 
-## Object-Orientation and Dependency Inversion
+## Structured Programming and Unconstrained GOTO
+
+The odds are slim that anyone has taught you how to use the &ldquo;goto&rdquo;
+statements that Robert Martin mentioned in his presentation.
+Before the structured programming revolution, many languages had such 
+statements to allow for jumping around source code. Their use has been
+discouraged for years, although they still exist in some modern languages,
+including C and C++. 
+
+Look at [this brief TutorialsPoint example](https://www.tutorialspoint.com/cprogramming/c_goto_statement.htm)
+to see how `goto` works. If you think back to what you learned in CS230,
+you should recognize what's happening here: `goto` is essentially
+a &ldquo;jump&rdquo; instruction in assembly language, exposed
+in a high-level programming language. 
+You should remember that method calls are implemented as jumps in
+machine code, but their semantics are carefully constrained.
+When you call a method, and it returns, you come back to where you started,
+for example.
+Not so with `goto`, which in the general case allows you to jump
+anywhere in a program. (That's how it worked when I first learned to program
+in BASIC on the Commodore&nbsp;64!)
+
+With a little imagination, I think you can consider how this powerful little
+language feature can very quickly lead to a complete mess.
+I believe there is a relationship here between `goto` and the structure
+of Blueprint visual programming in Unreal Engine 4. 
+[The official documentation for Blueprint](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/Blueprints/index.html)
+demonstrates clean layouts and good practices, but the trenches are filled
+with stories of [Blueprints From Hell](https://blueprintsfromhell.tumblr.com/).
+This is analogous to what happens if you start messing with `goto`:
+one little shortcut, one little kludge, and you start down a devastating 
+slippery slope.
+
+The community has pretty well decided that we would rather do without
+`goto`, so let's turn to look at one of the most popular paradigms
+and the benefits gained by the constraints it offers.
+
+## Object-Orientation, Polymorphism, and Dependency Inversion
 
 Many people talk about object-orientation as being defined by inheritance,
-polymorphism, and encapsulation. You may have seen 
-[this other presentation by Robert Martin](https://www.youtube.com/watch?v=t86v3N4OshQ) 
-in which he talks
-about how only polymorphism is really characteristic to object-oriented
-programming&mdash;a point he makes in passing during the ACCU keynote.
-He is very practical in his approach, not getting into language-theoretic issues of 
+polymorphism, and encapsulation. I will assume you have a good
+working understanding of those three terms, so take a moment to review
+them if you are unsure. They provide a definition of object-orientation that
+is appropriate for CS121, but we can do better!
+
+### Principles of Object-Oriented Programming
+
+You may have seen 
+[this other presentation by Robert Martin](https://www.youtube.com/watch?v=t86v3N4OshQ), 
+which I regularly assign in CS222.
+In this talk, he makes the case that of those three properties described above,
+only polymorphism is characteristic to object-oriented
+programming.
+Martin is very practical in his approach, not getting into language-theoretic issues of 
 polymorphism but focusing on what it _does_ for us as software developers.
 In particular, he talks about how polymorphism allows us to invert
-dependencies... but what does this mean?
+dependencies... but what exactly does this mean? 
 
 When you studied object-oriented programming in CS222, you should have come
 across [the SOLID principles](https://en.wikipedia.org/wiki/SOLID):
@@ -37,36 +82,41 @@ across [the SOLID principles](https://en.wikipedia.org/wiki/SOLID):
 - Interface segregation principle
 - Dependency inversion principle
 
-There is rarely time in that course to go deeply into each of these, and so
+Take a moment now to review these.
+There is rarely time in CS222 to go deeply into each principle, and
 we usually focus on the first. However, it is worth being familiar with all
 of them. In this exercise, you are going to learn more about the last one,
 which can be difficult to understand unless you see it in action.
+That is exactly what we will do by exploring _dependency injection_.
 
-To get our hands dirty with dependency inversion,
-we will be using [Guice](https://github.com/google/guice). Read [the Motivation
-page](https://github.com/google/guice/wiki/Motivation). Make sure you understand
-everything that is being described here: it builds upon what you have already
-learned in CS222. If you need a refresher on Java, 
+### Understanding Dependency Injection using Guice
+
+We will be using
+[Guice](https://github.com/google/guice). Read [the Motivation
+page](https://github.com/google/guice/wiki/Motivation), which establishes
+the case for dependency injection using examples that should be familiar
+from CS222 or your SE coursework.
+Keep in mind that if you need a refresher on Java, 
 [The Java Tutorials](https://docs.oracle.com/javase/tutorial/) are the best reference
 despite being dated; I would follow 
 [the Learning the Java Language trail](https://docs.oracle.com/javase/tutorial/java/index.html)
-if you need reminders about classes and interfaces.
+if you need reminders about classes and interfaces in particular.
 
-The [Getting Started](https://github.com/google/guice/wiki/GettingStarted) page
-demonstrates how Guice can be used to invert dependencies.
-Within this page, you will see a reference to a _DSL_ or _Domain-Specific Language_, which came
-up in Robert Martin's video. 
-Read [Martin Fowler's overview of DSL](https://martinfowler.com/bliki/DomainSpecificLanguage.html),
-note that the one presented in Guava is an _Internal DSL_,
-and follow up by reading 
-[Martin Fowler's definition of a FluentInterface](https://martinfowler.com/bliki/FluentInterface.html), 
-which is another term for the same idea.
-What Fowler describes as being used in JMock is common in many contemporary unit testing
-frameworks, including [Mocha for Javascript](https://mochajs.org/) and 
-[the `flutter_test` framework in dart](https://flutter.dev/docs/cookbook/testing/unit/introduction).
-Once you have worked through these readings, 
-you will see that, contrary to the Getting Started page, 
-`DemoModule` does not actually use the DSL; it only uses the binding annotations.
+Read the [Getting Started](https://github.com/google/guice/wiki/GettingStarted)
+page for a demonstration of dependency injection using Guice. Within this page,
+you will see a reference to a _DSL_ or _Domain-Specific Language_&mdash;a topic
+which came up in Robert Martin's video. Read [Martin Fowler's overview of
+DSL](https://martinfowler.com/bliki/DomainSpecificLanguage.html), note that the
+DSL presented in Guice is an _Internal DSL_, and follow up by reading [Martin
+Fowler's definition of a
+FluentInterface](https://martinfowler.com/bliki/FluentInterface.html), which is
+another term for the same idea. What Fowler describes as being used in JMock is
+common in many contemporary unit testing frameworks, including [Mocha for
+Javascript](https://mochajs.org/) and [the `flutter_test` framework in
+dart](https://flutter.dev/docs/cookbook/testing/unit/introduction). Once you
+have worked through these readings, you may notice that, contrary to the Getting
+Started page, `DemoModule` does not actually use the DSL; it only uses the
+binding annotations. Don't worry, it comes up again soon.
 
 [Guice's Mental Model documentation](https://github.com/google/guice/wiki/MentalModel)
 is the final part of the required reading.
@@ -75,6 +125,8 @@ the implementation details.
 This page more clearly presents the internal DSL, 
 which is the alternative to the binding annotations.
 Remember, this is an _internal DSL_, because it is written in Java. 
+
+### Starter Project Configuration
 
 Download and install [the community edition of IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
 if you do not already have it. 
@@ -92,7 +144,7 @@ the project by following the rules of
 [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
 as you learned in CS222.
 
-## Challenge #1
+### Challenge #1
 
 The default application configuration uses `FakeQueryEngine` to simulate a slow
 network request. This allows the UI to be developed regardless of whether the
@@ -104,7 +156,7 @@ configuration so that the application uses the real `WikipediaQueryEngine`
 instead. Note that you should be able to do this by only modifying Guice
 configuration: no changes should be made outside of module configuration.
 
-## Challenge #2
+### Challenge #2
 
 The default presentation of results is not very attractive, particularly the
 timestamp formatting. Also, the dependency on `RevisionFormatter` follows the
@@ -118,7 +170,7 @@ and adding that module to the Guice injector.
 Earn a [No-Prize](https://en.wikipedia.org/wiki/Marvel_No-Prize) by using TDD to
 develop your new formatter!
 
-## Challenge #3
+### Challenge #3
 
 In `WikipediaAnalyzer`, you will find an iterative approach to combining strings:
 ```
@@ -136,7 +188,7 @@ to accomplish the same goal in a single line.
 
 This challenge should only change `WikipediaAnalyzer` and no other class.
 
-## Wrapping Up
+### Wrapping Up
 
 Add a file to the project called `ProjectReport.md`. Address the following 
 prompts as part of your report:
