@@ -128,9 +128,14 @@ Remember, this is an _internal DSL_, because it is written in Java.
 
 ### Starter Project Configuration
 
-Download and install [the community edition of IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
-if you do not already have it. 
-You will also need JDK15, which can be downloaded from within IDEA.
+Download and install [the community edition of IntelliJ
+IDEA](https://www.jetbrains.com/idea/download/) if you do not already have it.
+You will also need JDK15, which can be downloaded from within IDEA. IntelliJ
+IDEA has recently changed their default interface to git, so if you haven't used
+it in a while&mdash;or you are new to [Gradle](https://gradle.org/)&mdash;you
+may want to [review this video](https://youtu.be/_XjTyQpmzUk).
+You will not need to follow all of these steps shown in the video, but it
+demonstrates how to get around IDEA and describes what to expect from it.
 
 Log in to GitHub and fork
 [my Wikipedia Revisions Reporter repository](https://github.com/doctor-g/WikipediaRevisionsReporter).
@@ -204,23 +209,14 @@ you desire.
 
 ### Wrapping Up
 
-Add a file to the project called `ProjectReport.md`. Address the following 
-prompts as part of your report:
+Complete the project report that you can find as `ProjectReport.md` in your
+repository. This includes documenting your solutions (or attempts) to the
+three challenges as well as addressing two reflection questions.
 
-- Write one or more paragraphs comparing and contrasting the iterative and functional  
-  approaches to string concatenation you explored in challenge #3. Which do you
-  prefer, and why?
-
-- Explain how polymorphism engendered dependency inversion in this little
-  application. Be clear and precise here, as this is, in part, an assessment of
-  your correct use of technical terminology.
-  Consider, for example, where exactly is polymorphism used?
-  Where exactly is a dependency inverted?
-
-Once you are satisfied with your submission, make sure you have pushed all
-your changes to your repository. Then, through GitHub's web interface, open a
-pull request to my repository. I will evaluate your work via the pull request
-and enter my evaluation on Canvas.
+Once you are satisfied with your submission, make sure you have committed and
+pushed all your changes to your repository. Then, through GitHub's web
+interface, open a pull request to my repository. I will evaluate your work via
+the pull request and enter my evaluation on Canvas.
 
 Note that the pull requests of your peers will be visible through the Web interface.
 As always, fight any temptation to dishonestly review others' work, as this
