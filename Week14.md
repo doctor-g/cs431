@@ -131,9 +131,17 @@ Remember, this is an _internal DSL_, because it is written in Java.
 Download and install [the community edition of IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
 if you do not already have it. 
 You will also need JDK15, which can be downloaded from within IDEA.
-Clone [my Wikipedia Revisions Reporter repository](https://github.com/doctor-g/WikipediaRevisionsReporter)
-and open it within IDEA. (You can do this in one step by telling IDEA to create
- a new project from version control.)
+
+Log in to GitHub and fork
+[my Wikipedia Revisions Reporter repository](https://github.com/doctor-g/WikipediaRevisionsReporter).
+Do this by clicking the &ldquo;Fork&rdquo; button in the upper right
+of the browser. This will make a copy of the project in your 
+GitHub account. (I assume at this point you all have GitHub accounts; if you
+do not, then of course, you will have to make an account first.)
+
+Clone _your copy_ (not the one in my repository!) of the project into IntelliJ IDEA.
+You can do this in one step by telling IDEA to create
+ a new project from version control.
 Make sure that you can run the application and its unit tests following the
 instructions in the `README.md` file.
 This will set you up to complete the challenges below.
@@ -188,23 +196,35 @@ to accomplish the same goal in a single line.
 
 This challenge should only change `WikipediaAnalyzer` and no other class.
 
+_Hint:_ Java provides an API for defining or using standard &ldquo;collectors,&rdquo;
+which may be useful.
+Review the common functional programming utilities that you used
+in the first half of the semester to puzzle through the data transformations
+you desire.
+
 ### Wrapping Up
 
 Add a file to the project called `ProjectReport.md`. Address the following 
 prompts as part of your report:
 
-- Write a paragraph comparing and contrasting the iterative and functional  
+- Write one or more paragraphs comparing and contrasting the iterative and functional  
   approaches to string concatenation you explored in challenge #3. Which do you
-  prefer, and why? (If you were unsuccessful at Challenge #3, write a reflection
-  on that experience instead. What went wrong? Where did you get stuck, and
-  when?)
+  prefer, and why?
 
-- Describe how polymorphism allowed dependency inversion in this little
+- Explain how polymorphism engendered dependency inversion in this little
   application. Be clear and precise here, as this is, in part, an assessment of
   your correct use of technical terminology.
   Consider, for example, where exactly is polymorphism used?
   Where exactly is a dependency inverted?
 
-Export your project by using `File→Project to Zip file` and submit it
-via [Canvas](https://bsu.instructure.com).
+Once you are satisfied with your submission, make sure you have pushed all
+your changes to your repository. Then, through GitHub's web interface, open a
+pull request to my repository. I will evaluate your work via the pull request
+and enter my evaluation on Canvas.
 
+Note that the pull requests of your peers will be visible through the Web interface.
+As always, fight any temptation to dishonestly review others' work, as this
+would certainly violate the university's standards for academic integrity.
+My hope would be that this point would be unnecessary, but I include this just
+to be sure that there are no miscommunications of expectation, since we only
+just started working together.
