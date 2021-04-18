@@ -224,3 +224,6 @@ would certainly violate the university's standards for academic integrity.
 My hope would be that this point would be unnecessary, but I include this just
 to be sure that there are no miscommunications of expectation, since we only
 just started working together.
+
+<hr>
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/doctor-g/cs431">CS431 Course Plan</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.cs.bsu.edu/~pvgestwicki">Paul Gestwicki</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p>
