@@ -39,6 +39,7 @@ Your solutions must abide by the following rules:
 - You may introduce helper methods if it yields a more &ldquo;Clean&rdquo; solution.
 
 Submit your solution before the deadline by issuing a pull request to my repository.
+Include your name in the pull request so I know to whom to award credit.
 As always, keep in mind our policies of academic integrity. Start early so you can
 get help if you need it, and remember that it's better to be honestly wrong than dishonestly
 anything.
